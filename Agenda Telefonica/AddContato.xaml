@@ -1,0 +1,70 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Agenda_Telefonica.AddContato"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Name="lpkItemTemplate">
+            <TextBlock Text="{Binding Grupos}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="lpkFullItemTemplate">
+            <TextBlock Text="{Binding Grupos}" FontSize="30"/>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+
+
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Agenda Telefonica" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Novo Contato" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel Name="NomePanel" Margin="12,10,0,509">
+                <TextBlock Name="lblNome" Text="Nome:"/>
+                <TextBox Name="txtNome" InputScope="PersonalFullName" Margin="-12,0,0,0"/>
+            </StackPanel>
+            <StackPanel Name="NumeroPanel" Margin="0,103,0,413">
+                <TextBlock Name="lblNumero" Text="Numero:"/>
+                <TextBox Name="txtNumero" InputScope="Number"/>
+            </StackPanel>
+            <StackPanel Name="ListaDeGrupos" Margin="0,199,0,290">
+                <TextBlock Name="lblGrupo" Text="Grupo:"/>
+                <toolkit:ListPicker  ItemTemplate="{Binding lpkItemTemplate}" FullModeItemTemplate="{Binding lpkFullItemTemplate}" x:Name="lpkGrupos" ExpansionMode="FullScreenOnly"/>
+                <!--FullModeItemTemplate="{Binding lpkFullItemTemplate}"-->
+            </StackPanel>
+            <StackPanel Name="ListaDeTipos" Margin="0,317,0,180">
+                <TextBlock x:Name="lblTipo" Text="Tipo:"/>
+                <toolkit:ListPicker ItemTemplate="{Binding lpkItemTemplate}" FullModeItemTemplate="{Binding lpkFullItemTemplate}" x:Name="lpkTipo" ExpansionMode="FullScreenOnly" Height="60"/>
+                <!--FullModeItemTemplate="{Binding lpkFullItemTemplate}"-->
+            </StackPanel>
+            <StackPanel Name="BotaoSalvar" Margin="0,514,238,10">
+                <Button  x:Name="bttSalvar" Content="Salvar Contato" Height="83" Click="bttSalvar_Click"/>
+            </StackPanel>
+            <StackPanel Name="BotaoLimpar" Margin="223,514,0,10">
+                <Button  x:Name="bttLimpar" Content="Limpar Campos" Height="83" Click="bttLimpar_Click"/>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

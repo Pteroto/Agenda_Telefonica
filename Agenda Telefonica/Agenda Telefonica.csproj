@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2F5CA1D8-61AD-43D2-8090-D91745DFC29E}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Agenda_Telefonica</RootNamespace>
+    <AssemblyName>Agenda Telefonica</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Agenda_Telefonica.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Agenda_Telefonica.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="system.data.linq" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddContato.xaml.cs">
+      <DependentUpon>AddContato.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlterarContato.xaml.cs">
+      <DependentUpon>AlterarContato.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\DadosControle.cs" />
+    <Compile Include="Modelos\DadosAgenda.cs" />
+    <Compile Include="DAO\DAOProvider.cs" />
+    <Compile Include="DAO\DataBaseContext.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AddContato.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlterarContato.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="App.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dados\Contatos.txt" />
+    <Content Include="icons\iconsblack\add.png" />
+    <Content Include="icons\iconsblack\back.png" />
+    <Content Include="icons\iconsblack\basecircle.png" />
+    <Content Include="icons\iconsblack\cancel.png" />
+    <Content Include="icons\iconsblack\check.png" />
+    <Content Include="icons\iconsblack\close.png" />
+    <Content Include="icons\iconsblack\delete.png" />
+    <Content Include="icons\iconsblack\download.png" />
+    <Content Include="icons\iconsblack\edit.png" />
+    <Content Include="icons\iconsblack\favs.addto.png" />
+    <Content Include="icons\iconsblack\favs.png" />
+    <Content Include="icons\iconsblack\feature.alarm.png" />
+    <Content Include="icons\iconsblack\feature.calendar.png" />
+    <Content Include="icons\iconsblack\feature.camera.png" />
+    <Content Include="icons\iconsblack\feature.email.png" />
+    <Content Include="icons\iconsblack\feature.phone.png" />
+    <Content Include="icons\iconsblack\feature.search.png" />
+    <Content Include="icons\iconsblack\feature.settings.png" />
+    <Content Include="icons\iconsblack\feature.video.png" />
+    <Content Include="icons\iconsblack\folder.png" />
+    <Content Include="icons\iconsblack\like.png" />
+    <Content Include="icons\iconsblack\microphone.png" />
+    <Content Include="icons\iconsblack\minus.png" />
+    <Content Include="icons\iconsblack\new.png" />
+    <Content Include="icons\iconsblack\next.png" />
+    <Content Include="icons\iconsblack\overflowdots.png" />
+    <Content Include="icons\iconsblack\questionmark.png" />
+    <Content Include="icons\iconsblack\refresh.png" />
+    <Content Include="icons\iconsblack\save.png" />
+    <Content Include="icons\iconsblack\share.png" />
+    <Content Include="icons\iconsblack\stop.png" />
+    <Content Include="icons\iconsblack\sync.png" />
+    <Content Include="icons\iconsblack\transport.ff.png" />
+    <Content Include="icons\iconsblack\transport.pause.png" />
+    <Content Include="icons\iconsblack\transport.play.png" />
+    <Content Include="icons\iconsblack\transport.rew.png" />
+    <Content Include="icons\iconsblack\upload.png" />
+    <Content Include="icons\iconswhite\add.png" />
+    <Content Include="icons\iconswhite\back.png" />
+    <Content Include="icons\iconswhite\basecircle.png" />
+    <Content Include="icons\iconswhite\cancel.png" />
+    <Content Include="icons\iconswhite\check.png" />
+    <Content Include="icons\iconswhite\close.png" />
+    <Content Include="icons\iconswhite\delete.png" />
+    <Content Include="icons\iconswhite\download.png" />
+    <Content Include="icons\iconswhite\edit.png" />
+    <Content Include="icons\iconswhite\favs.addto.png" />
+    <Content Include="icons\iconswhite\favs.png" />
+    <Content Include="icons\iconswhite\feature.alarm.png" />
+    <Content Include="icons\iconswhite\feature.calendar.png" />
+    <Content Include="icons\iconswhite\feature.camera.png" />
+    <Content Include="icons\iconswhite\feature.email.png" />
+    <Content Include="icons\iconswhite\feature.phone.png" />
+    <Content Include="icons\iconswhite\feature.search.png" />
+    <Content Include="icons\iconswhite\feature.settings.png" />
+    <Content Include="icons\iconswhite\feature.video.png" />
+    <Content Include="icons\iconswhite\folder.png" />
+    <Content Include="icons\iconswhite\LightIcons.dll" />
+    <Content Include="icons\iconswhite\like.png" />
+    <Content Include="icons\iconswhite\microphone.png" />
+    <Content Include="icons\iconswhite\minus.png" />
+    <Content Include="icons\iconswhite\new.png" />
+    <Content Include="icons\iconswhite\next.png" />
+    <Content Include="icons\iconswhite\overflowdots.png" />
+    <Content Include="icons\iconswhite\questionmark.png" />
+    <Content Include="icons\iconswhite\refresh.png" />
+    <Content Include="icons\iconswhite\save.png" />
+    <Content Include="icons\iconswhite\share.png" />
+    <Content Include="icons\iconswhite\stop.png" />
+    <Content Include="icons\iconswhite\sync.png" />
+    <Content Include="icons\iconswhite\transport.ff.png" />
+    <Content Include="icons\iconswhite\transport.pause.png" />
+    <Content Include="icons\iconswhite\transport.play.png" />
+    <Content Include="icons\iconswhite\transport.rew.png" />
+    <Content Include="icons\iconswhite\upload.png" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>
